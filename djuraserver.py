@@ -27,7 +27,7 @@ def login():
     if not user:
         return False 
     if user.password == data['password'] :
-        return jsonify({'username': user.username,"number":user.number})
+        return jsonify({'username': user.username,"number":user.number , "id":user.id})
     else:
          return jsonify({'message': 'Password incorrect'})
     
