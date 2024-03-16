@@ -34,10 +34,11 @@ def login():
 @app.route('/savedata',methods=["POST"])
 def saveData():
     data = request.get_json()
+    number = 0 if 'number' not in data else data['number']
     new_user = User(
             username=data["username"],
             password=data['password'],
-            number=data['number'],
+            number=number,
     )
     db.session.add(new_user)
     db.session.commit()
