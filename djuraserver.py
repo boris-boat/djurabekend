@@ -42,6 +42,7 @@ def saveData():
             username=data["username"],
             password=data['password'],
             number=number,
+            city=data['city']
     )
     db.session.add(new_user)
     db.session.commit()
